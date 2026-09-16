@@ -1,0 +1,225 @@
+/* =========================================
+   RESET & BASE
+   ========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  font-family: Arial, sans-serif;
+  color: white;
+
+  background: linear-gradient(
+    135deg,
+    #b5c900,
+    #667eea,
+    #764ba2
+  );
+}
+
+
+/* =========================================
+   CARD CONTENITORE
+   ========================================= */
+
+.quiz-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.quiz-card {
+  width: 100%;
+  max-width: 600px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border-radius: 25px;
+  padding: 30px 20px;
+  text-align: center;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================
+   LOGO
+   ========================================= */
+
+.logo {
+  width: 180px;
+  max-width: 80%;
+  display: block;
+  margin: 0 auto 20px auto;
+
+  background: white;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+
+/* =========================================
+   QUIZ - TESTI
+   ========================================= */
+
+.quiz-title {
+  margin-top: 0;
+  font-size: 30px;
+}
+
+.progress-label {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 25px;
+}
+
+.question-text {
+  font-size: 23px;
+  line-height: 1.4;
+  margin-bottom: 35px;
+}
+
+
+/* =========================================
+   PULSANTI RISPOSTA
+   ========================================= */
+
+.answers-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.answer-btn {
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  min-height: 65px;
+
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+
+  cursor: pointer;
+  text-align: left;
+
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.answer-btn:hover {
+  transform: scale(1.03);
+}
+
+.answer-btn:active {
+  transform: scale(0.97);
+}
+
+.btn-red   { background: #ff4757; }
+.btn-blue  { background: #1e90ff; }
+.btn-green { background: #2ed573; }
+
+
+/* =========================================
+   RISULTATO
+   ========================================= */
+
+.result-box {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  padding: 20px;
+  margin: 20px 0;
+
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.scores-box {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.score-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  margin: 12px 0;
+}
+
+.score-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.red-dot   { background: #ff4757; }
+.blue-dot  { background: #1e90ff; }
+.green-dot { background: #2ed573; }
+
+
+/* =========================================
+   QR CODE
+   ========================================= */
+
+.qr-section {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.qr-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#qrcode {
+  background: white;
+  width: 220px;
+  height: 220px;
+  padding: 10px;
+  margin: 20px auto;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#qrcode img {
+  max-width: 100%;
+}
+
+.download-note {
+  font-size: 14px;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 480px) {
+  .quiz-title    { font-size: 24px; }
+  .question-text { font-size: 19px; }
+  .answer-btn    { font-size: 15px; padding: 16px; }
+}
