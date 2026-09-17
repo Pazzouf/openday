@@ -159,47 +159,7 @@ function showResult() {
     `;
   }
 
-  saveResult(consigliati);
   createQRCode();
-}
-
-
-/* =========================================
-   SALVATAGGIO RISULTATO
-
-   Scarica un file "risultati.js" con i dati.
-   ========================================= */
-
-function saveResult(consigliati) {
-  const risultato = {
-    data: new Date().toLocaleString("it-IT"),
-    risposte: {
-      scientifico:      scores.scientifico,
-      informatico:      scores.informatico,
-      economicoSociale: scores.economico
-    },
-    indirizziConsigliati: consigliati
-  };
-
-  const contenuto =
-`const risultatoQuiz = ${JSON.stringify(risultato, null, 2)};
-
-console.log("Risultato quiz:");
-console.log(risultatoQuiz);
-`;
-
-  const blob = new Blob([contenuto], { type: "application/javascript" });
-  const url  = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-
-  link.href     = url;
-  link.download = "risultati.js";
-
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-
-  URL.revokeObjectURL(url);
 }
 
 
